@@ -1,19 +1,23 @@
-
-<h1><em>Hello!</em> Choose a dog</h2>
+<h1>These are the listed doggies</h2>
 
 <div class="container">
   <div class="row">
-    <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F05%2F18%2Fcockapoo-red-colored-greenery-223686877-2000.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Tima</h5>
-        <p class="card-text">healthy and hardy dog! Properly trained, it adores children and behaves well in public.</p>
-        <a href="#" class="btn btn-primary">Book this dog</a>
+  <% @dogs.each do |dog| %>
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F05%2F18%2Fcockapoo-red-colored-greenery-223686877-2000.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= dog.name %></h5>
+            <p class="card-text"><%= dog.description %></p>
+            <a href="#" class="btn btn-primary">Book this dog</a>
+          </div>
+        </div>
       </div>
-    </div>
-    </div><!-- col-4-->
+  <% end %>
+  </div>
+</div>
 
+<%#
     <div class="col-4">
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://www.rtlnieuws.nl/sites/default/files/content/images/2022/01/04/ANP-421471978.jpg?itok=FaDtpmUv&offsetX=0&offsetY=0&cropWidth=1024&cropHeight=577&width=1024&height=576&impolicy=dynamic" alt="Card image cap">
@@ -23,7 +27,7 @@
         <a href="#" class="btn btn-primary">Book this dog</a>
       </div>
     </div>
-    </div><!-- col-4-->
+    </div>
 
     <div class="col-4">
     <div class="card" style="width: 18rem;">
@@ -34,6 +38,6 @@
         <a href="#" class="btn btn-primary">Book this dog</a>
       </div>
     </div>
-    </div><!-- col-4-->
+    </div>
   </div><!-- row-->
-</div><!-- container-->
+</div><!-- container--> %>
