@@ -1,0 +1,7 @@
+<h1>Make a booking</h1>
+
+<%= simple_form_for [@dog, @booking] do |f|  %>
+<%= f.input :message  %>
+<%= f.input :date  %>
+<%= f.submit "Make a booking"  %>
+<% end %>

@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Dog.destroy_all
+User.destroy_all
+
+user1 = User.create!(email: "123@gmail.com", password: "123456", first_name: "Adam", last_name: "Jones")
+user2 = User.create!(email: "456@gmail.com", password: "123456", first_name: "Kate", last_name: "Smith")
+
+Dog.create!(name: "Kokoo", user: user1, breed: "Cocopoo", description: "healthy and hardy dog! Properly trained, it adores children and behaves well in public", address: "1077AD")
+Dog.create!(name: "Kokoo", user: user2, breed: "Cocopoo", description: "May display aggression to other dogs. Very calm and playful.", address: "1076CD")
+Dog.create!(name: "Tima", user: user1, breed: "Cocopoo", description: "healthy and hardy dog! Properly trained, it adores children and behaves well in public", address: "10563JF")
+Dog.create!(name: "Pumba", user: user1, breed: "Bulldog", description: "healthy and hardy dog! Properly trained, it adores children and behaves well in public", address: "10563JF")
+Dog.create!(name: "Rio", user: user2, breed: "Chihuahua", description: "healthy and hardy dog! Properly trained, it adores children and behaves well in public", address: "16463ML")
+Dog.create!(name: "Shankhai", user: user2, breed: "Dobermann", description: "healthy and hardy dog! Properly trained, it adores children and behaves well in public", address: "1793OP")
