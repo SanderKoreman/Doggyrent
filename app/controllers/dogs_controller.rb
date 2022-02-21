@@ -5,7 +5,7 @@ class DogsController < ApplicationController
   end
 
   def show
-    @dog = Dog.find(@dog)
+    # @dog = Dog.find(@dog)
   end
 
   def new
@@ -14,7 +14,8 @@ class DogsController < ApplicationController
 
   def create
     @dog = Dog.new(dog_params)
-    if Dog.save
+    @dog.user = current_user
+    if @dog.save
       redirect_to dog_path(@dog), notice: 'List was successfully created.'
     else
       render :new
