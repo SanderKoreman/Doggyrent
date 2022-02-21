@@ -1,0 +1,11 @@
+<h2>List your dog</h2>
+
+<%= simple_form_for(@dog) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :breed %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
