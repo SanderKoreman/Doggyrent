@@ -10,12 +10,12 @@ class BookingsController < ApplicationController
     dog = Dog.find(params[:dog_id])
     booking.user = current_user
     booking.dog = dog
-    if @booking.save
+    if booking.save
       flash[:notice] = "Thanks! Booking was created"
     else
       flash[:error] = "Something went wrong!"
     end
-    redirect_to root
+    redirect_to root_path
 
   end
 

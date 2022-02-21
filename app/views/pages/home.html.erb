@@ -9,7 +9,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= dog.name %></h5>
             <p class="card-text"><%= dog.description %></p>
-            <a href="#" class="btn btn-primary">Book this dog</a>
+            <%= link_to "Book this dog", new_dog_booking_path(dog), class: "btn btn-primary"%>
           </div>
         </div>
       </div>
