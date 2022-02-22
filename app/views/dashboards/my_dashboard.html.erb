@@ -1,30 +1,30 @@
-<div class="container mt-3 border">
+<div class="container mt-3">
   <div class="row">
   <!---------------------USER INFO-------------------------------------->
     <div class="col-4">
-
-      <div class ="card-body d-flex flex-column align-center align-items-center">
+      <div class ="card-dashboard d-flex flex-column align-center align-items-center">
           <div class="avatar-box">
           </div>
-          <div>
-          <span class="fs-2 text-gray-800 text-hover-primary fw-bolder mb-1"><%= current_user.first_name %></span>
+          <div class="dg-margin-bottom mt-3">
+            <span class="fs-5 text-gray-400 text-hover-primary fw-medium"><%= current_user.first_name %> <%= current_user.last_name %></span>
+            <a href="users/<%= @user.id %>/edit"><i class="fas fa-edit"></i></a>
+          </div>
 
-          <a href="users/<%= @user.id %>/edit"><i class="fas fa-edit"></i></a>
-
-            </div>
-          <p class = "fs-6 fw-bold text-gray-400 mb-2"><%= current_user.last_name %></p>
-
-        <div class="card">
-
-
+        <div class="card-dog-list p-4">
           <% if !@my_dogs.empty?%>
-          <h5 class="card-header">My dogs</h5>
+          <div class= "d-flex justify-content-between">
+            <h5 class="fw-bold">My dogs </h5>
+            <a class= "btn btn-light btn-sm" href="dogs/new">Add new</a>
+          </div>
+
             <% @my_dogs.each do |dog| %>
-            <div class="card-body">
-              <h5 class="card-title"> <%= dog.name %></h5>
-              <p class="card-text"> <%= dog.description %></p>
-              <%= link_to "See details", dog_path(dog), class: "btn btn-primary" %>
-              <%= link_to "Delete this dog", dog_path(dog), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
+            <div class = "mt-3">
+              <h5><%= dog.name %></h5>
+              <p><%= dog.description %></p>
+              <div class= "mt-4">
+                <%= link_to "See details", dog_path(dog), class: "btn btn-primary" %>
+                <%= link_to "Delete this dog", dog_path(dog), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-light" %>
+              </div>
             </div>
             <% end %>
           <% else %>
@@ -38,30 +38,29 @@
 
 <!-------------------------BOOKINGS---------------------------------->
     <div class="col-8">
-    <div class="containercard-body mb-5">
-      <h2>My bookings</h2>
-       <% if !@my_bookings.empty?%>
-        <% @my_bookings.each do |booking| %>
-            <div class="card-product">
-              <img src="https://source.unsplash.com/random/?dog" />
-              <div class="container d-flex justify-content-between">
-                <div>
-                  <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
-                  <p>For : <strong> <%= booking.date %></strong></p>
+    <div class="card-dashboard h-100">
+      <div class="dg-margin-bottom">
+        <h4>My bookings</h4>
+        <% if !@my_bookings.empty?%>
+          <% @my_bookings.each do |booking| %>
+              <div class="card-product">
+                <img src="https://source.unsplash.com/random/?dog" />
+                <div class="container d-flex justify-content-between">
+                  <div>
+                    <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
+                    <p>For : <strong> <%= booking.date %></strong></p>
+                  </div>
+                  <%= link_to "Cancel my booking", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
                 </div>
-                <%= link_to "Cancel my booking", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
               </div>
-            </div>
-        <% end %>
-        <% else %>
-            <div class="my-alert " role="alert">
-              No history of bookings. <%= link_to "Rent a dog now", root_path, class: "alert-link" %> now.
-            </div>
           <% end %>
-    </div>
-
-    <div class="containercard-body">
-      <h2>Booking requests</h2>
+          <% else %>
+              <div class="my-alert " role="alert">
+                No history of bookings. <%= link_to "Rent a dog now", root_path, class: "alert-link" %> now.
+              </div>
+            <% end %>
+      </div>
+      <h4>Booking requests</h4>
         <% if !@received_bookings.empty?%>
           <% @received_bookings.each do |booking| %>
             <div class="card-product">
@@ -79,7 +78,7 @@
             </div><!--card-product-->
           <% end %>
           <% else %>
-            <div class="my-alert " role="alert">
+            <div class="my-alert" role="alert">
               You don't have any incoming requests.
             </div>
           <% end %>

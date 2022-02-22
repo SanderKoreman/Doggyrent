@@ -17,8 +17,8 @@ class BookingsController < ApplicationController
     else
       flash[:error] = "Something went wrong!"
     end
-    redirect_to dog_bookings_path(@dog)
-
+    # redirect_to dog_bookings_path(@dog)
+    redirect_to my_dashboard_path
   end
 
   def edit

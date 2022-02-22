@@ -57,3 +57,23 @@ h5 a {
 .card {
   margin-bottom: 16px;
 }
+
+// card for DASHBOARD
+.card-dashboard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+
+  a{
+    margin-bottom: 0px;
+  }
+}
+
+.dg-margin-bottom{
+  margin-bottom: 30px;
+}
+
+.card-dog-list{
+  border-radius: 9px;
+  border: 1px solid #efefef;
+}
