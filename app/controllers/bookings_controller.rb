@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+
   end
 
   def new
@@ -28,9 +28,15 @@ class BookingsController < ApplicationController
   def update
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to my_dashboard_path
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:message, :date)
+    params.require(:booking).permit(:message, :date, :id)
   end
 end
