@@ -1,1 +1,32 @@
-// Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  width: 100%;
+  height: cover;
+}
+
+.banner h1 {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.container-banner {
+  padding-left: 32px;
+}
+
+.btn-light {
+  border-radius: 5px;
+}
