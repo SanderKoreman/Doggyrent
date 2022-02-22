@@ -1,52 +1,59 @@
 <div class="container mt-3 border">
   <div class="row">
   <!---------------------USER INFO-------------------------------------->
-    <div class="col-4 card-body d-flex flex-column align-center align-items-center">
-        <div class="avatar-box"></div>
-        <p class="fs-2 text-gray-800 text-hover-primary fw-bolder mb-1"><%= current_user.first_name %></p>
-        <p class = "fs-6 fw-bold text-gray-400 mb-2"><%= current_user.last_name %></p>
+    <div class="col-4">
 
-      <div class="card">
-        <h5 class="card-header">My dogs</h5>
-        <% @my_dogs.each do |dog| %>
-          <div class="card-body">
-            <h5 class="card-title"> <%= dog.name %></h5>
-            <p class="card-text">My dog description. it should be here only if i am the owner.</p>
-            <%= link_to "See details", dog_path(dog), class: "btn btn-primary" %>
+      <div class ="card-body d-flex flex-column align-center align-items-center">
+          <div class="avatar-box">
           </div>
-        <% end %>
-      </div>
+          <div>
+          <span class="fs-2 text-gray-800 text-hover-primary fw-bolder mb-1"><%= current_user.first_name %></span>
+          <a href="#"> <i class="fas fa-edit"></i>
+            </a>
+            </div>
+          <p class = "fs-6 fw-bold text-gray-400 mb-2"><%= current_user.last_name %></p>
 
+        <div class="card">
+          <h5 class="card-header">My dogs</h5>
+          <% @my_dogs.each do |dog| %>
+            <div class="card-body">
+              <h5 class="card-title"> <%= dog.name %></h5>
+              <p class="card-text">My dog description. it should be here only if i am the owner.</p>
+              <%= link_to "See details", dog_path(dog), class: "btn btn-primary" %>
+              <%= link_to "Delete this dog", dog_path(dog), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
+            </div>
+          <% end %>
+        </div>
+        </div>
     </div><!--col-4-->
 
 <!-------------------------BOOKINGS---------------------------------->
     <div class="col-8">
-    <div class="container border card-body">
-          <h2>My bookings</h2>
+    <div class="containercard-body">
+      <h2>My bookings</h2>
+        <% @my_bookings.each do |booking| %>
+            <div class="card-product">
 
-      <% @my_bookings.each do |booking| %>
-          <div class="card-product">
-            <img src="https://source.unsplash.com/random/?dog" />
-            <div class="container d-flex justify-content-between">
-              <div>
-                <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
-                <p>For : <strong> <%= booking.date %></strong></p>
+              <img src="https://source.unsplash.com/random/?dog" />
+              <div class="container d-flex justify-content-between">
+                <div>
+                  <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
+                  <p>For : <strong> <%= booking.date %></strong></p>
+                </div>
+                <%= link_to "Cancel my booking", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
               </div>
-              <%= link_to "Cancel my booking", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
             </div>
-          </div>
-      <% end %>
+        <% end %>
     </div>
 
-
-    <div class="container border card-body">
+    <div class="containercard-body">
       <h2>Booking requests</h2>
         <% @received_bookings.each do |booking| %>
           <div class="card-product">
               <img src="https://source.unsplash.com/random/?dog" />
               <div class="container d-flex justify-content-between">
                 <div>
-                  <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
+                  <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked by <%= booking.user.first_name %></h2>
                   <p>For : <strong> <%= booking.date %></strong></p>
                 </div>
                 <div>
