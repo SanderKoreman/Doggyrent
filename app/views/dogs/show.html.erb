@@ -4,13 +4,12 @@
     <h1>Hi! My name is <%= @dog.name %></h1>
     <h2 class="breed-title">(... and I'm a <%= @dog.breed.downcase %>)</h2>
   </div>
-
     <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*" alt="dog" class="center">
-  <div class="description-card">
-    <h2 class="description-title">Description</h2>
-    <p><%= @dog.description %></p>
-    <%= link_to "Book me!", new_dog_booking_path(@dog), class: "btn btn-primary"%>
-  </div>
+    <div class="description-card">
+      <h2 class="description-title">Description</h2>
+      <p><%= @dog.description %></p>
+      <%= link_to "Book me!", new_dog_booking_path(@dog), class: "btn btn-primary"%>
+    </div>
   <h2 class="Location-title">Where am I?</h2>
   <img class="map" src="https://i.ibb.co/xgT59Fy/Schermafbeelding-2022-02-22-om-12-22-33.png" alt="map">
 </div>
