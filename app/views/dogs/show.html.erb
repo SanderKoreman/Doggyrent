@@ -1,10 +1,19 @@
-<div class="container">
-
   <div class="flex-container">
     <h1>Hi! My name is <%= @dog.name %></h1>
     <h2 class="breed-title">(... and I'm a <%= @dog.breed.downcase %>)</h2>
   </div>
-    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*" alt="dog" class="center">
+  <div class="dog-show-grid">
+    <% @dog.photos.each_with_index do |photo, index| %>
+      <div class="photo-<%=index + 1%>">
+        <% if photo %>
+          <%= cl_image_tag(photo.key, crop: :fill)%>
+        <% else %>
+          <img class="dog-photo-show" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F05%2F18%2Fcockapoo-red-colored-greenery-223686877-2000.jpg" alt="Card image cap">
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
     <div class="row">
       <div class="col-6">
           <div class="description-card">
@@ -25,4 +34,3 @@
     <h2 class="Location-title">Where am I?</h2>
     <img class="map" src="https://i.ibb.co/xgT59Fy/Schermafbeelding-2022-02-22-om-12-22-33.png" alt="map">
   </div>
-</div>
