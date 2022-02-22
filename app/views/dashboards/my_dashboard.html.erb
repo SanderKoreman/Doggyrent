@@ -14,13 +14,21 @@
           <p class = "fs-6 fw-bold text-gray-400 mb-2"><%= current_user.last_name %></p>
 
         <div class="card">
+
+
+          <% if !@my_dogs.empty?%>
           <h5 class="card-header">My dogs</h5>
-          <% @my_dogs.each do |dog| %>
+            <% @my_dogs.each do |dog| %>
             <div class="card-body">
               <h5 class="card-title"> <%= dog.name %></h5>
               <p class="card-text">My dog description. it should be here only if i am the owner.</p>
               <%= link_to "See details", dog_path(dog), class: "btn btn-primary" %>
               <%= link_to "Delete this dog", dog_path(dog), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-danger" %>
+            </div>
+            <% end %>
+          <% else %>
+            <div class="my-alert" role="alert">
+              You don't have any dogs yet. <%= link_to "Add a dog", new_dog_path, class: "alert-link" %> Its your choice!.
             </div>
           <% end %>
         </div>
