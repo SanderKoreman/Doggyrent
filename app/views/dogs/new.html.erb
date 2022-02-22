@@ -5,7 +5,6 @@
   <%= f.input :breed %>
   <%= f.input :description %>
   <%= f.input :address %>
-  <%= f.input :photo, as: :file %>
-
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
