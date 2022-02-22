@@ -1,0 +1,16 @@
+<div class="container mt-3">
+<h1>Your bookings</h1>
+<ol class>
+<% @bookings.each do |booking| %>
+  <li>
+    <div class="card-product">
+      <img src="https://source.unsplash.com/random/?dog" />
+      <div class="card-product-infos">
+        <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
+        <p>For : <strong> <%= booking.date %></strong></p>
+      </div>
+    </div>
+    </li>
+<% end %>
+</ol>
+</div>
