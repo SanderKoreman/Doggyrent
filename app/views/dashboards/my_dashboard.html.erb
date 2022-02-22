@@ -1,0 +1,62 @@
+<div class="container mt-3 border">
+  <div class="row">
+  <!---------------------USER INFO-------------------------------------->
+    <div class="col-4 card-body d-flex flex-column align-center align-items-center">
+        <div class="avatar-box"></div>
+        <p class="fs-2 text-gray-800 text-hover-primary fw-bolder mb-1"><%= current_user.first_name %></p>
+        <p class = "fs-6 fw-bold text-gray-400 mb-2"><%= current_user.last_name %></p>
+
+      <div class="card">
+        <h5 class="card-header">My dogs</h5>
+        <% @my_dogs.each do |dog| %>
+          <div class="card-body">
+            <h5 class="card-title"> <%= dog.name %></h5>
+            <p class="card-text">My dog description. it should be here only if i am the owner.</p>
+            <%= link_to "See details", dog_path(dog), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+
+    </div><!--col-4-->
+
+<!-------------------------BOOKINGS---------------------------------->
+    <div class="col-8">
+    <div class="container border card-body">
+          <h2>My bookings</h2>
+
+      <% @my_bookings.each do |booking| %>
+          <div class="card-product">
+            <img src="https://source.unsplash.com/random/?dog" />
+            <div class="container d-flex justify-content-between">
+              <div>
+                <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
+                <p>For : <strong> <%= booking.date %></strong></p>
+              </div>
+              <%= link_to "Cancel my booking", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+
+    <div class="container border card-body">
+      <h2>Booking requests</h2>
+        <% @received_bookings.each do |booking| %>
+          <div class="card-product">
+              <img src="https://source.unsplash.com/random/?dog" />
+              <div class="container d-flex justify-content-between">
+                <div>
+                  <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
+                  <p>For : <strong> <%= booking.date %></strong></p>
+                </div>
+                <div>
+                    <%= link_to "Accept", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
+                    <%= link_to "Decline", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
+                </div>
+              </div>
+          </div><!--card-product-->
+        <% end %>
+    </div>
+    </div><!--col-8-->
+  </div><!--main row-->
+</div><!--main container-->

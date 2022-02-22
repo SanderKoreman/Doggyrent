@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :dogs, only: [ :index, :show, :new, :create ] do
-    resources :bookings, only: [:index, :new, :create, :edit, :update]
+    resources :bookings, only: [:new, :create, :edit, :update, :destroy]
   end
+
+  get '/my-dashboard', to: 'dashboards#my_dashboard'
 end
