@@ -6,7 +6,7 @@ class DashboardsController < ApplicationController
 
     # @my_dogs = Dog.where(user: current_user)
     @my_dogs = current_user.dogs
-
+    @user = current_user
   end
 
 end
