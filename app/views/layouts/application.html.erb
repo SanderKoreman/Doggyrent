@@ -10,14 +10,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@300;500&display=swap');
+    </style>
   </head>
 
   <body>
     <%= render 'shared/navbar'  %>
-    <div class="container">
       <%= render 'shared/flashes' %>
       <%= yield %>
-    </div>
   <footer>
     <%= render 'shared/footer'  %>
   </footer>
