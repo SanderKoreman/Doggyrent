@@ -1,0 +1,28 @@
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.flex-container {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 12px;
+}
+
+h1 {
+  margin-right: 25px;
+}
+
+.breed-title {
+  color: grey;
+}
+
+.map {
+  width: 100%;
+}
+
+.btn {
+  margin-bottom: 12px;
+}
