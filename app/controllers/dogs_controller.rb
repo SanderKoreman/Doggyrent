@@ -25,7 +25,7 @@ class DogsController < ApplicationController
   def destroy
     @dog = Dog.find(params[:id])
     @dog.destroy if @dog.user == current_user
-    redirect_to dogs_path
+    redirect_to my_dashboard_path
   end
 
   private
