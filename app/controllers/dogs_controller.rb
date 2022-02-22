@@ -16,10 +16,16 @@ class DogsController < ApplicationController
     @dog = Dog.new(dog_params)
     @dog.user = current_user
     if @dog.save
-      redirect_to dog_path(@dog), notice: 'List was successfully created.'
+      redirect_to dog_path(@dog), notice: 'Dog was successfully created.'
     else
       render :new
     end
+  end
+
+  def destroy
+    @dog = Dog.find(params[:id])
+    @dog.destroy if @dog.user == current_user
+    redirect_to dogs_path
   end
 
   private
