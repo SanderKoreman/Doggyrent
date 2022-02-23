@@ -22,6 +22,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -30,6 +31,18 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    redirect_to my_dashboard_path
+  end
+
+  def accept
+    booking = Booking.find(params[:id])
+    booking.approved!
+    redirect_to my_dashboard_path
+  end
+
+  def decline
+    booking = Booking.find(params[:id])
+    booking.declined!
     redirect_to my_dashboard_path
   end
 
