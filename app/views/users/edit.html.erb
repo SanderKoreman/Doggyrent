@@ -1,7 +1,15 @@
-<%= simple_form_for (@user) do |f| %>
-<%= f.input :first_name  %>
-<%= f.input :last_name  %>
 
-<%= f.input :photo, as: :file %>
-<%= f.submit "Update"%>
-<% end %>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6">
+    <h2 class = "mb-4 mt-4">Update profile info</h2>
+      <%= simple_form_for (@user) do |f| %>
+      <%= f.input :first_name  %>
+      <%= f.input :last_name  %>
+
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Update"%>
+      <% end %>
+    </div>
+  </div>
+</div>
