@@ -24,11 +24,13 @@
 
             <% @my_dogs.each do |dog| %>
             <div class = "mt-3">
-              <h5><%= dog.name %></h5>
-              <p><%= dog.description %></p>
-              <div class= "mt-4">
-                <%= link_to "See details", dog_path(dog), class: "btn btn-primary" %>
-                <%= link_to "Delete this dog", dog_path(dog), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-light" %>
+              <div class="my-dog-card">
+                <h5><%= dog.name %></h5>
+                <div class= "mt-4">
+
+                  <%= link_to "See details", dog_path(dog), class: "btn btn-primary" %>
+                  <%= link_to "Delete this dog", dog_path(dog), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-light" %>
+                </div>
               </div>
             </div>
             <% end %>
@@ -49,7 +51,7 @@
         <% if !@my_bookings.empty?%>
           <% @my_bookings.each do |booking| %>
               <div class="card-product">
-                <%# <%= cl_image_tag booking.dog.photos.first.key  %> %>
+                <%= cl_image_tag booking.dog.photos.first.key  %>
                 <div class="container d-flex justify-content-between">
                   <div>
                     <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
@@ -69,7 +71,7 @@
         <% if !@received_bookings.empty?%>
           <% @received_bookings.each do |booking| %>
             <div class="card-product">
-                <img src="https://source.unsplash.com/random/?dog" />
+                <%= cl_image_tag booking.user.photo.key  %>
                 <div class="container d-flex justify-content-between">
                   <div>
                     <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked by <%= booking.user.first_name %></h2>
