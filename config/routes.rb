@@ -7,5 +7,12 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :edit, :update, :destroy]
   end
 
+  resources :bookings do
+    member do
+      patch "/accept", to: "bookings#accept"
+      patch "/decline", to: "bookings#decline"
+    end
+  end
+
   get '/my-dashboard', to: 'dashboards#my_dashboard'
 end
