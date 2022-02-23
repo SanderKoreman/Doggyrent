@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     member do
       patch "/accept", to: "bookings#accept"
       patch "/decline", to: "bookings#decline"
+      patch "/archive", to: "bookings#archive"
     end
   end
 
