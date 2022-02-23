@@ -3,8 +3,10 @@
   <!---------------------USER INFO-------------------------------------->
     <div class="col-4">
       <div class ="card-dashboard d-flex flex-column align-center align-items-center">
-          <div class="avatar-box">
-          </div>
+          <%= cl_image_tag(current_user.photo.key, width: 200, heigh: 200, gravity: "faces", crop: "thumb", class: "avatar-box") %>
+
+
+
           <div class="dg-margin-bottom mt-3">
             <span class="fs-5 text-gray-400 text-hover-primary fw-medium"><%= current_user.first_name %> <%= current_user.last_name %></span>
             <a href="users/<%= @user.id %>/edit"><i class="fas fa-edit"></i></a>

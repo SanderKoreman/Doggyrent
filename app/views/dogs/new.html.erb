@@ -1,10 +1,18 @@
-<h2>List your dog</h2>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6">
+      <div class="card-dashboard mt-4">
+        <h2 class = "mb-4">List your dog</h2>
 
-<%= simple_form_for(@dog) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :breed %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+            <%= simple_form_for(@dog) do |f| %>
+              <%= f.input :name %>
+              <%= f.input :breed %>
+              <%= f.input :description %>
+              <%= f.input :address %>
+              <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+              <%= f.submit class: "btn btn-primary mt-3" %>
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div>

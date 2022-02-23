@@ -12,12 +12,15 @@
           <li class="nav-item active">
             <a class="nav-link" href="/dogs">Home</a>
           </li>
+          <li class="nav-item active">
+            <%= link_to "Profile", my_dashboard_path, class: "nav-link"%>
+          </li>
 
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
-              <%= link_to "Profile", my_dashboard_path, class: "dropdown-item"%>
+
               <a class="dropdown-item" href="/dogs/new">Add listing</a>
             </div>
           </li>
