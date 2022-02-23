@@ -5,8 +5,6 @@
       <div class ="card-dashboard d-flex flex-column align-center align-items-center">
           <%= cl_image_tag(current_user.photo.key, width: 200, heigh: 200, gravity: "faces", crop: "thumb", class: "avatar-box") %>
 
-
-
           <div class="dg-margin-bottom mt-3">
             <span class="fs-5 text-gray-400 text-hover-primary fw-medium"><%= current_user.first_name %> <%= current_user.last_name %></span>
             <a href="users/<%= @user.id %>/edit"><i class="fas fa-edit"></i></a>
@@ -46,7 +44,7 @@
         <% if !@my_bookings.empty?%>
           <% @my_bookings.each do |booking| %>
               <div class="card-product">
-                <img src="https://source.unsplash.com/random/?dog" />
+                <%= cl_image_tag booking.dog.photos.first.key  %>
                 <div class="container d-flex justify-content-between">
                   <div>
                     <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
