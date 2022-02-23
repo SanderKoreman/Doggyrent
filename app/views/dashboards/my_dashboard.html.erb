@@ -3,8 +3,11 @@
   <!---------------------USER INFO-------------------------------------->
     <div class="col-4">
       <div class ="card-dashboard d-flex flex-column align-center align-items-center">
-          <%= cl_image_tag(current_user.photo.key, width: 200, heigh: 200, gravity: "faces", crop: "thumb", class: "avatar-box") %>
-
+      <% if current_user.photo.attached?  %>
+        <%= cl_image_tag(current_user.photo.key, width: 200, height: 200, gravity: "faces", crop: "thumb", class: "avatar-box") %>
+      <% else %>
+        <img src="https://www.sibberhuuske.nl/wp-content/uploads/2016/10/default-avatar.png" alt="avatar" class="avatar-box" >
+      <% end %>
 
 
           <div class="dg-margin-bottom mt-3">
@@ -71,10 +74,17 @@
                   <div>
                     <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked by <%= booking.user.first_name %></h2>
                     <p>For : <strong> <%= booking.date %></strong></p>
+                    <span class="badge badge-pill badge-danger"><%= booking.status %></span>
+
                   </div>
                   <div>
-                      <%= link_to "Accept", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
-                      <%= link_to "Decline", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
+                    <% if booking.pending? %>
+                      <%= link_to "Accept", accept_booking_path(booking), method: :patch %>
+                      <%= link_to "Decline", decline_booking_path(booking), method: :patch %>
+                    <% elsif booking.approved?%>
+                      <%= link_to "Cancel confirmed booking", decline_booking_path(booking), method: :patch, class: "btn btn-danger" %>
+                    <% else %>
+                    <% end %>
                   </div>
                 </div>
             </div><!--card-product-->
