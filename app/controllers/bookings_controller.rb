@@ -46,6 +46,12 @@ class BookingsController < ApplicationController
     redirect_to my_dashboard_path
   end
 
+  def archive
+    booking = Booking.find(params[:id])
+    booking.archived!
+    redirect_to my_dashboard_path
+  end
+
   private
 
   def booking_params
