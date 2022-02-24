@@ -51,7 +51,9 @@
         <% if !@my_bookings.empty?%>
           <% @my_bookings.each do |booking| %>
               <div class="card-product">
+              <% booking.dog.photos.any? %>
                 <%= cl_image_tag booking.dog.photos.first.key  %>
+                <% end %>
                 <div class="container d-flex justify-content-between">
                   <div>
                     <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
@@ -63,7 +65,7 @@
           <% end %>
           <% else %>
               <div class="my-alert " role="alert">
-                No history of bookings. <%= link_to "Rent a dog now", dogs_path, class: "alert-link" %> now.
+                No history of bookings. <%= link_to "Rent a dog now!", dogs_path, class: "alert-link" %>
               </div>
             <% end %>
       </div>
@@ -77,7 +79,6 @@
                     <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked by <%= booking.user.first_name %></h2>
                     <p>For : <strong> <%= booking.date %></strong></p>
                     <span class="badge badge-pill badge-danger"><%= booking.status %></span>
-
                   </div>
                   <div>
                     <% if booking.pending? %>
