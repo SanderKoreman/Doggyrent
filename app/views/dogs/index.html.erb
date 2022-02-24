@@ -7,8 +7,8 @@
         <% else %>
           <h4>Hi you!</h4>
         <% end %>
-        <p>At this very moment, <%= @dogs.count %> dogs want to go for a walk in the park. Let's go!</p>
-        <p>Search bar here</p>
+        <h5>At this very moment, <%= @dogs.count %> dogs want to go for a walk in the park. <strong>Let's go!</strong></h5>
+        <p>Or you can search for a specific breed here</p>
       </div>
       <% @dogs.each do |dog| %>
         <% if dog.user != current_user %>
@@ -18,15 +18,15 @@
             <% else %>
               <img class="card-dog-img-top" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F05%2F18%2Fcockapoo-red-colored-greenery-223686877-2000.jpg" alt="Card image cap">
             <% end %>
-            <div class="card-dog-body">
-              <div class="card-dog-header">
-                <h5 class="card-dog-title"><%= link_to dog.name, dog_path(dog) %></h5>
-                <h6 class="card-dog-breed"><em><%= dog.breed %></em></h6>
+              <div class="card-dog-body">
+                <div class="card-dog-header">
+                  <h5 class="card-dog-title"><%= link_to dog.name, dog_path(dog) %></h5>
+                  <h6 class="card-dog-breed"><em><%= dog.breed %></em></h6>
+                </div>
+                <p class="owner-name"><%= dog.user.first_name %>'s dog</p>
+                <p class="card-dog-text"><%= dog.description[0..225] %>...</p>
+                <%= link_to "MEET ME!", dog_path(dog), class: "btn-blue"%>
               </div>
-              <p class="owner-name">Owned by <%= dog.user.first_name %></p>
-              <p class="card-dog-text"><%= dog.description %></p>
-              <%= link_to "BOOK ME!", dog_path(dog), class: "btn-blue"%>
-            </div>
           </div>
         <%end %>
       <% end %>
