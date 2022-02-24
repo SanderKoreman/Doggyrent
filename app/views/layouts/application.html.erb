@@ -17,14 +17,15 @@
   </head>
 
   <body>
+    <div class="flex-layout">
       <%= render 'shared/navbar'  %>
-    <%= render 'shared/flashes' %>
+      <%= render 'shared/flashes' %>
+
       <div class="content">
         <%= yield %>
       </div>
-      <footer>
-        <%= render 'shared/footer'  %>
-      </footer>
-  </div>
+      <%= render 'shared/footer'  %>
+    </div>
   </body>
+
 </html>
