@@ -47,6 +47,7 @@ class DogsController < ApplicationController
     redirect_to dog_path(@dog)
   end
 
+  
   private
 
   def dog_params
