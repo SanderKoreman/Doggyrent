@@ -29,7 +29,7 @@
               <h2 class = "link-dog-show"><%= link_to dog.name, dog_path(dog) %></h2>
 
                   <div class="icons-dashboard">
-                    <a href="dogs/<%= dog.id %>" class = "me-2"><i class="fas fa-edit"></i></a>
+                    <a href="dogs/<%= dog.id %>/edit" class = "me-2"><i class="fas fa-edit"></i></a>
                     <a data-confirm="Are you sure?" data-method="delete" href="dogs/<%= dog.id %>"><i class="fas fa-trash"></i></a>
                   </div>
                 </div>
