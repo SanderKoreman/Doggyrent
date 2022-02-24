@@ -1,85 +1,27 @@
+
 <div class="container mt-4">
-  <div class="row">
+  <div class="row gx-5">
     <!------------------------USER INFO------------------------------------->
-    <%= render "dashboards/user_info" %>
-    <!-------------------------MY BOOKINGS---------------------------------->
-    <div class="col-8">
-      <div class="card-dashboard">
-        <%= render "dashboards/my_bookings" %>
-        <!-------------------------BOOKING REQUESTS----------------------------->
-        <h4 class = "mb-4">Booking requests</h4>
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-current-tab" data-bs-toggle="tab" data-bs-target="#nav-current" type="button" role="tab" aria-controls="nav-current" aria-selected="true">Current</button>
-            <button class="nav-link" id="nav-archived-tab" data-bs-toggle="tab" data-bs-target="#nav-archived" type="button" role="tab" aria-controls="nav-archived" aria-selected="false">Archived</button>
-          </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-          <!-------------------------Current tab---------------------------------->
-          <div class="tab-pane fade show active" id="nav-current" role="tabpanel" aria-labelledby="nav-current-tab">
-            <% if @received_bookings.present? %>
-              <% @received_bookings.each do |booking| %>
-                <div class="card-product mb-4">
-                  <% if booking.user.photo.attached?  %>
-                    <%= cl_image_tag(booking.user.photo.key, width: 200, height: 200, gravity: "faces", crop: "thumb") %>
-                  <% else %>
-                    <img src="https://www.sibberhuuske.nl/wp-content/uploads/2016/10/default-avatar.png" alt="dog photo">
-                  <% end %>
-                  <div class="container d-flex justify-content-between">
-                    <div>
-                      <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked by <%= booking.user.first_name %></h2>
-                      <p>For : <strong> <%= booking.date %></strong></p>
-                      <span class="badge badge-pill badge-danger"><%= booking.status %></span>
-                    </div>
-                    <div>
-                      <% if booking.pending? %>
-                        <%= link_to "Accept", accept_booking_path(booking), method: :patch %>
-                        <%= link_to "Decline", decline_booking_path(booking), method: :patch %>
-                      <% elsif booking.approved? %>
-                        <%= link_to "Cancel confirmed booking", decline_booking_path(booking), method: :patch, class: "btn btn-dark" %>
-                      <% elsif booking.declined? %>
-                        <%= link_to "Archive", archive_booking_path(booking), method: :patch %>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            <% elsif @received_bookings.empty? %>
-              <div class="my-alert mt-3" role="alert">
-                You don't have any incoming requests.
-              </div>
-            <% end %>
-          </div>
-          <!-------------------------Archived tab---------------------------------->
-          <div class="tab-pane fade" id="nav-archived" role="tabpanel" aria-labelledby="nav-archived-tab">
-            <% if @archived_bookings.present? %>
-              <% @archived_bookings.each do |archived_booking| %>
-                <div class="card-product mb-4">
-                  <% if archived_booking.user.photo.attached?  %>
-                    <%= cl_image_tag(archived_booking.user.photo.key, width: 200, height: 200, gravity: "faces", crop: "thumb") %>
-                  <% else %>
-                    <img src="https://www.sibberhuuske.nl/wp-content/uploads/2016/10/default-avatar.png" alt="dog photo">
-                  <% end %>
-                  <div class="container d-flex justify-content-between">
-                    <div>
-                      <h2><%= link_to archived_booking.dog.name, dog_path(archived_booking.dog.id) %> booked by <%= archived_booking.user.first_name %></h2>
-                      <p>For : <strong> <%= archived_booking.date %></strong></p>
-                      <span class="badge badge-pill badge-danger"><%= archived_booking.status %></span>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            <% else %>
-              <div class="my-alert mt-3" role="alert">
-                You don't history of bookings.
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <!--tab-content-->
+    <div class="col-3">
+      <div class="bookings-sidebar">
+        <%= render "dashboards/user_info" %>
       </div>
     </div>
-    <!--main row-->
+    <div class="col-9 bookings-sidebar">
+
+        <div class="row gx-5">
+          <!-------------------------MY BOOKINGS---------------------------------->
+          <div class="col-6">
+            <%= render "dashboards/my_bookings" %>
+          </div>
+          <!-------------------------BOOKING REQUESTS----------------------------->
+          <div class="col-6">
+            <%= render "dashboards/requested_bookings" %>
+          </div>
+        </div>
+        <!--row-->
+
+      <!--container-->
+    </div>
   </div>
-  <!--main container-->
 </div>

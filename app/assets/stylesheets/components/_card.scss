@@ -56,8 +56,8 @@ h5 a {
 }
 
 // card for DASHBOARD
-.card-dashboard {
-  background-color: white;
+.bookings-sidebar {
+  background-color: rgb(255, 255, 255);
   border-radius: 12px;
   padding: 30px;
 
@@ -70,14 +70,13 @@ h5 a {
   margin-bottom: 30px;
 }
 
-.card-dog-list{
-  background-color: white;
-  border-radius: 9px;
-  border: 1px solid #efefef;
-}
 
 .link-dog-show{
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+}
+
+.dashboard-dogs-card{
+  width: 100%;
 }
