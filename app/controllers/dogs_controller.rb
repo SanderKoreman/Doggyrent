@@ -7,7 +7,8 @@ class DogsController < ApplicationController
       {
         lat: flat.latitude,
         lng: flat.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { flat: flat })
+        info_window: render_to_string(partial: "info_window", locals: { flat: flat }),
+        image_url: helpers.asset_url("dogface5")
       }
     end
   end
