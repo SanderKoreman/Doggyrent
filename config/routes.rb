@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get "/about_us", to: 'pages#about_us'
   resources :users, only: [:edit, :update]
 
   resources :dogs, only: [ :index, :show, :new, :create, :destroy, :edit, :update] do

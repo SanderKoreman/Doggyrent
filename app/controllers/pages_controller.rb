@@ -5,4 +5,7 @@ class PagesController < ApplicationController
     @dogs = Dog.all
   end
 
+  def about_us
+  end
+
 end

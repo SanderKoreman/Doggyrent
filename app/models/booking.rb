@@ -9,6 +9,10 @@ class Booking < ApplicationRecord
   end
 
   def self.received_bookings(user)
-    where(dog: user.dogs)
+    where(dog: user.dogs).not_archived
+  end
+
+  def self.archived_bookings(user)
+    where(dog: user.dogs).archived
   end
 end
