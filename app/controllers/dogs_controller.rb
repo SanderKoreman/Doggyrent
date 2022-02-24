@@ -36,6 +36,17 @@ class DogsController < ApplicationController
     redirect_to my_dashboard_path
   end
 
+  def edit
+    @dog = Dog.find(params[:id])
+  end
+
+  def update
+    @dog = Dog.find(params[:id])
+    @dog.update(dog_params)
+
+    redirect_to dog_path(@dog)
+  end
+
   private
 
   def dog_params
