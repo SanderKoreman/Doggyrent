@@ -9,14 +9,12 @@
         <% end %>
         <h5>At this very moment, <%= @dogs.count %> dogs want to go for a walk in the park. <strong>Let's go!</strong></h5>
           <%= form_tag(dogs_path, method: :get, :class => 'form-inline') do %>
-            <div class="container">
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
               placeholder: "Search by breed"
             %>
             <%= submit_tag "SEARCH", class: "btn btn-blue-small" %>
-            </div>
           <% end %>
       </div>
       <% @dogs.each do |dog| %>
