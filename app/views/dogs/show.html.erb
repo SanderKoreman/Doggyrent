@@ -19,14 +19,18 @@
       <div class="col-6">
           <div class="description-card">
             <h2 class="description-title">Description</h2>
-            <p><%= @dog.description %></p>
+            <p class="description-text"><%= @dog.description %></p>
           </div>
       </div>
       <div class="col-6">
         <div class="calendar-card">
         <h2 class="calendar-title">Availability</h2>
-        <p>This will show a calendar</p>
-        <%= link_to "Book me!", new_dog_booking_path(@dog), class: "btn btn-primary"%>
+        <%= simple_form_for [@dog, @booking] do |f|  %>
+          <%= f.input :message  %>
+          <%= f.input :date  %>
+          <%= f.submit "BOOK ME", class: "btn-blue"%>
+<% end %>
+        <%# <%= link_to "BOOK ME!", new_dog_booking_path(@dog), class: "btn-blue"%> %>
         </div>
       </div>
     </div>

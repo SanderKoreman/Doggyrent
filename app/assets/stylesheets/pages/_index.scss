@@ -3,21 +3,45 @@
 @import "show";
 @import "dashboard";
 
+.card-top {
+  background-color: rgb(255, 255, 255);
+  border-radius: 9px;
+  padding: 18px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
 
 .card-dog {
   display: flex;
   flex-direction: row;
-  border-top: 1px solid rgb(211, 211, 211);
-  padding-top: 12px;
-  margin-bottom: 12px;
+  background-color: white;
+  border-radius: 9px;
+  padding: 12px;
+  margin-bottom: 16px;
+  max-height: 224px;
+}
+
+.owner-name {
+  font-size: 12px;
+  color: grey;
+}
+
+.card-dog-text {
+  flex-grow: 1;
+}
+
+.card-dog-body {
+  display: flex;
+  flex-direction: column;
 }
 
 .card-dog:first-child {
-  border-top: none;
+  margin-top: 12px;
 }
 
-.row {
-  margin-left: 24px;
+.card-dog-header {
+  display: flex;
+  align-items: center
 }
 
 .card-dog-img-top {
@@ -25,10 +49,26 @@
   height: 200px;
   margin-right: 12px;
   object-fit: cover;
+  border-radius: 9px;
+}
+
+.card-dog-title {
+  font-weight: bolder;
+  margin-right: 12px;
+  a {
+    color: rgb(106, 111, 182);
+    &:hover {
+      color: rgb(64, 67, 116)
+    }
+  }
 }
 
 h6 {
   color: grey;
+}
+
+h4 {
+  font-weight: bolder;
 }
 
 #map {
@@ -36,4 +76,11 @@ h6 {
     position: sticky;
     top: 60px;
     height: 100vh;
+}
+
+.card-dog-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }

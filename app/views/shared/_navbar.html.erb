@@ -10,23 +10,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/dogs">Book a dog</a>
+            <a class="nav-link" href="/dogs">See all dogs</a>
           </li>
-          <li class="nav-item active">
-            <%= link_to "Dashboard", my_dashboard_path, class: "nav-link"%>
-          </li>
-
           <li class="nav-item dropdown">
             <% if user_signed_in? %>
               <div class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= cl_image_tag(current_user.photo.key, width: 30, height: 30, class: "avatar") %>
+                <% if current_user.photo.attached? %>
+                  <%= cl_image_tag(current_user.photo.key, width: 40, height: 40, class: "avatar") %>
+                <% else %>
+                  <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg" />
+                <% end %>
+              </div>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/my-dashboard">Dashboard</a>
               </div>
             <% else %>
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg" />
-            <% end %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/dogs/new">Add listing</a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/dogs/new">Add listing</a>
             </div>
+            <% end %>
           </li>
       </ul>
     </div>
