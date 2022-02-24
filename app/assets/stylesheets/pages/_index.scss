@@ -11,6 +11,10 @@
   margin-bottom: 16px;
 }
 
+.card-top h4 {
+  font-size: 32px;
+}
+
 .card-dog {
   display: flex;
   flex-direction: row;
@@ -28,11 +32,11 @@
 
 .card-dog-text {
   flex-grow: 1;
-}
-
-.card-dog-body {
-  display: flex;
-  flex-direction: column;
+  min-height: 84px;
+  max-height: 84px;
+  .btn-blue {
+    margin-top: -4px;
+  }
 }
 
 .card-dog:first-child {
@@ -41,7 +45,7 @@
 
 .card-dog-header {
   display: flex;
-  align-items: center
+  align-items: flex-end;
 }
 
 .card-dog-img-top {
@@ -76,11 +80,4 @@ h4 {
     position: sticky;
     top: 60px;
     height: 100vh;
-}
-
-.card-dog-text {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
 }
