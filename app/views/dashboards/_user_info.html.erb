@@ -1,0 +1,43 @@
+<div class="col-4">
+      <div class ="card-dashboard d-flex flex-column align-center align-items-center">
+
+      <% if current_user.photo.attached?  %>
+        <%= cl_image_tag(current_user.photo.key, width: 200, height: 200, gravity: "faces", crop: "thumb", class: "avatar-box") %>
+      <% else %>
+        <img src="https://www.sibberhuuske.nl/wp-content/uploads/2016/10/default-avatar.png" alt="avatar" class="avatar-box" >
+      <% end %>
+
+          <div class="dg-margin-bottom mt-3">
+            <span class="fs-5 text-gray-400 text-hover-primary fw-medium"><%= current_user.first_name %> <%= current_user.last_name %></span>
+            <a href="users/<%= @user.id %>/edit"><i class="fas fa-edit"></i></a>
+          </div>
+
+        <div class="card-dog-list p-4">
+          <% if !@my_dogs.empty?%>
+          <div class= "d-flex justify-content-between">
+            <h5 class="fw-bold">My dogs </h5>
+            <a class= "btn btn-light btn-sm ms-5" href="dogs/new">Add new</a>
+          </div>
+
+            <% @my_dogs.each do |dog| %>
+            <div class = "mt-3">
+              <div class="my-dog-card">
+              <div class= "mt-4 d-flex justify-content-between">
+              <h2 class = "link-dog-show"><%= link_to dog.name, dog_path(dog) %></h2>
+
+                  <div class="icons-dashboard">
+                    <a href="dogs/<%= dog.id %>/edit" class = "me-2"><i class="fas fa-edit"></i></a>
+                    <a data-confirm="Are you sure?" data-method="delete" href="dogs/<%= dog.id %>"><i class="fas fa-trash"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          <% else %>
+            <div class="my-alert" role="alert">
+              Your dog list is empty. <%= link_to "Add a dog", new_dog_path, class: "alert-link" %> now.
+            </div>
+          <% end %>
+        </div>
+        </div>
+    </div>
