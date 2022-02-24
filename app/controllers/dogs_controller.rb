@@ -14,6 +14,7 @@ class DogsController < ApplicationController
 
   def show
     @dog = Dog.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -47,7 +48,7 @@ class DogsController < ApplicationController
     redirect_to dog_path(@dog)
   end
 
-  
+
   private
 
   def dog_params

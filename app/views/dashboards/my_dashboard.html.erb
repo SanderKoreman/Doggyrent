@@ -28,7 +28,7 @@
                   <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked by <%= booking.user.first_name %></h2>
                   <p>For : <strong> <%= booking.date %></strong></p>
                   <span class="badge badge-pill badge-danger"><%= booking.status %></span>
-                </div>
+              </div>
                 <div>
                   <% if booking.pending? %>
                     <%= link_to "Accept", accept_booking_path(booking), method: :patch %>
@@ -61,7 +61,7 @@
               <div class="container d-flex justify-content-between">
                 <div>
                   <h2><%= link_to archived_booking.dog.name, dog_path(archived_booking.dog.id) %> booked by <%= archived_booking.user.first_name %></h2>
-                  <p>For : <strong> <%= archived_booking.date %></strong></p>
+                  <p>For: <strong> <%= archived_booking.date %></strong></p>
                   <span class="badge badge-pill badge-danger"><%= archived_booking.status %></span>
                 </div>
               </div>

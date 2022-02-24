@@ -1,7 +1,7 @@
 <div class="container">
   <div class="flex-container">
     <h1>Hi! My name is <%= @dog.name %></h1>
-    <h2 class="breed-title">(... and I'm a <%= @dog.breed.downcase %>)</h2>
+    <h2 class="breed-title">(and I'm a <%= @dog.breed.downcase %>)</h2>
   </div>
   <div class="dog-show-grid">
     <% @dog.photos.each_with_index do |photo, index| %>
@@ -24,13 +24,12 @@
       </div>
       <div class="col-6">
         <div class="calendar-card">
-        <h2 class="calendar-title">Availability</h2>
-        <%= simple_form_for [@dog, @booking] do |f|  %>
-          <%= f.input :message  %>
-          <%= f.input :date  %>
-          <%= f.submit "BOOK ME", class: "btn-blue"%>
-<% end %>
-        <%# <%= link_to "BOOK ME!", new_dog_booking_path(@dog), class: "btn-blue"%> %>
+          <h2 class="calendar-title">Availability</h2>
+          <%= simple_form_for [@dog, @booking] do |f|  %>
+            <%= f.input :message  %>
+            <%= f.input :date  %>
+            <%= f.submit "BOOK ME", class: "btn-blue"%>
+          <% end %>
         </div>
       </div>
     </div>
