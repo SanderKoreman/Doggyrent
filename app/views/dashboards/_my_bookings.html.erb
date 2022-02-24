@@ -1,31 +1,29 @@
-    <div class="col-8">
-    <div class="card-dashboard">
-      <div class="dg-margin-bottom">
-        <h4 class= "mb-4">My bookings</h4>
-        <% if !@my_bookings.empty?%>
-          <% @my_bookings.each do |booking| %>
-              <div class="card-product mb-4">
-              <% if booking.dog.photos.attached?  %>
-                <%= cl_image_tag(booking.dog.photos.first.key) %>
-              <% else %>
-                <img src="https://dogfuriendly.com/wp-content/uploads/2019/02/Default-Avatar.jpg" alt="dog photo">
-              <% end %>
-                <%#= cl_image_tag booking.dog.photos.first.key  %>
-                <div class="container d-flex justify-content-between">
-                  <div>
-                    <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
-                    <p>For : <strong> <%= booking.date %></strong></p>
-                    <div class="text-container">
-                      <p><strong><%= booking.user.first_name %></strong> messaged you: <%= booking.message %></p>
-                    </div>
-                  </div>
-                  <%= link_to "Cancel my booking", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
-                </div>
-              </div>
-          <% end %>
-          <% else %>
-              <div class="my-alert " role="alert">
-                No history of bookings. <%= link_to "Rent a dog now", dogs_path, class: "alert-link" %>
-              </div>
-            <% end %>
+<div class="dg-margin-bottom">
+  <h4 class= "mb-4">My bookings</h4>
+  <% if !@my_bookings.empty?%>
+    <% @my_bookings.each do |booking| %>
+      <div class="card-product mb-4">
+        <% if booking.dog.photos.attached?  %>
+          <%= cl_image_tag(booking.dog.photos.first.key) %>
+        <% else %>
+          <img src="https://dogfuriendly.com/wp-content/uploads/2019/02/Default-Avatar.jpg" alt="dog photo">
+        <% end %>
+        <%#= cl_image_tag booking.dog.photos.first.key  %>
+        <div class="container d-flex justify-content-between">
+          <div>
+            <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
+            <p>For : <strong> <%= booking.date %></strong></p>
+            <div class="text-container">
+              <p><strong><%= booking.user.first_name %></strong> messaged you: <%= booking.message %></p>
+            </div>
+          </div>
+          <%= link_to "Cancel my booking", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
+        </div>
       </div>
+    <% end %>
+  <% else %>
+    <div class="my-alert " role="alert">
+      No history of bookings. <%= link_to "Rent a dog now", dogs_path, class: "alert-link" %>
+    </div>
+  <% end %>
+</div>
