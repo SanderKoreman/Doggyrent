@@ -28,7 +28,7 @@ h1 {
   background-color: white;
   border-radius: 9px;
   padding: 12px;
-  min-height: 296px;
+  min-height: 290px;
 }
 
 .calendar-card {
@@ -122,4 +122,9 @@ h1 {
     &:hover {
       color: rgb(68, 71, 122)
     }
+}
+
+.btn-fix-margin {
+  margin-top: 3px;
+  margin-bottom: 0;
 }

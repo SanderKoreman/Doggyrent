@@ -1,7 +1,6 @@
-import { Application } from "@hotwired/stimulus"
-import Carousel from "stimulus-carousel"
-import Swiper from "swiper/swiper-bundle"
+// import { Application } from "@hotwired/stimulus"
+// import Carousel from "stimulus-carousel"
 
-const application = Application.start()
-application.register("carousel", Carousel)
-console.log('Hello')
+// const application = Application.start()
+// application.register("carousel", Carousel)
+// console.log('Hello')
