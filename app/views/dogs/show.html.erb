@@ -8,7 +8,7 @@
         <% if photo %>
           <%= cl_image_tag(photo.key, crop: :fill)%>
         <% else %>
-          <img class="dog-photo-show" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F05%2F18%2Fcockapoo-red-colored-greenery-223686877-2000.jpg" alt="Card image cap">
+          <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F05%2F18%2Fcockapoo-red-colored-greenery-223686877-2000.jpg" alt="Card image cap">
         <% end %>
       </div>
     <% end %>
@@ -29,7 +29,7 @@
           <%= simple_form_for [@dog, @booking] do |f|  %>
             <%= f.input :message  %>
             <%= f.input :date  %>
-            <%= f.submit "BOOK ME!", class: "btn btn-green"%>
+            <%= f.submit "BOOK ME!", class: "btn btn-green btn-fix-margin"%>
           <% end %>
         <% else %>
           <p class="calendar-message"><%= link_to "Login", new_user_session_path %> or <%= link_to "register", new_user_registration_path %> to book this cutie!</p>
