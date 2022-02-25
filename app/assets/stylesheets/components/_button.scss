@@ -63,3 +63,39 @@
     color: rgb(255, 255, 255);
   }
 }
+
+.btn-blue-mini {
+  background-color: rgb(106, 111, 182);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px rgb(68, 71, 122);
+  font-weight: 700;
+  font-size: 11px;
+  text-decoration: none;
+  width: fit-content;
+  margin-bottom: -2px;
+  &:hover {
+  //   box-shadow: 0 4px rgb(66, 69, 114);
+  //   padding: 8px 20px 8px 20px;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.btn-red-small {
+  background-color: rgb(182, 106, 106);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px rgb(122, 68, 68);
+  font-weight: 700;
+  font-size: 11px;
+  text-decoration: none;
+  width: fit-content;
+  margin-bottom: -2px;
+  &:hover {
+  //   box-shadow: 0 4px rgb(66, 69, 114);
+  //   padding: 8px 20px 8px 20px;
+    color: rgb(255, 255, 255);
+  }
+}
