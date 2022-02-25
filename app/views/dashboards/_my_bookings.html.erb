@@ -1,30 +1,32 @@
-<div class="dg-margin-bottom">
-  <h4 class= "mb-4">My bookings</h4>
-  <% if !@my_bookings.empty?%>
-    <% @my_bookings.each do |booking| %>
-      <div class="card-product mb-4">
-        <% if booking.dog.photos.attached?  %>
-          <%= cl_image_tag(booking.dog.photos.first.key) %>
-        <% else %>
-          <img src="https://dogfuriendly.com/wp-content/uploads/2019/02/Default-Avatar.jpg" alt="dog photo">
-        <% end %>
+<h5 class= "mt-1 mb-4">My bookings</h5>
+<% if !@my_bookings.empty?%>
+  <% @my_bookings.each do |booking| %>
+    <div class="card-product mb-4">
+      <% if booking.dog.photos.attached?  %>
+        <%= cl_image_tag(booking.dog.photos.first.key)%>
+      <% else %>
+        <img src="https://dogfuriendly.com/wp-content/uploads/2019/02/Default-Avatar.jpg" alt="dog photo">
+      <% end %>
+      <div class= "d-flex justify-content-between align-items-center" style="width: 100%" >
+        <div>
+          <h6><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h6>
+          <p>For: <strong> <%= booking.date %></strong></p>
+          <span class = "fw-normal badge"><%= booking.status.capitalize %></span>
 
-        <div class="container d-flex justify-content-between align-items-center">
-          <div>
-            <h2><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h2>
-            <p>For : <strong> <%= booking.date %></strong></p>
-              <p class = "badge badge-secondary"><%= booking.status %></p>
-            <div class="text-container">
-              <p><strong><%= booking.user.first_name %></strong> messaged you: <%= booking.message %></p>
-            </div>
-          </div>
+          <p><strong><%= booking.user.first_name %></strong> noted: <em>"<%= booking.message %>"</em></p>
+        </div>
+        <div>
           <%= link_to "Cancel", dog_booking_path(booking.dog, booking), method: :delete, data: {confirm: "Are you sure"} %>
         </div>
       </div>
-    <% end %>
-  <% else %>
-    <div class="my-alert " role="alert">
-      No history of bookings. <%= link_to "Rent a dog now", dogs_path, class: "alert-link" %>
     </div>
   <% end %>
-</div>
+<% else %>
+  <div class="my-alert " role="alert">
+    No history of bookings. <%= link_to "Rent a dog now", dogs_path, class: "alert-link" %>
+  </div>
+<% end %>
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on bottom
+</button>
