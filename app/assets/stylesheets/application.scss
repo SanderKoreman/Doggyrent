@@ -13,6 +13,9 @@
 @import "components/index";
 @import "pages/index";
 
+@import 'swiper/swiper-bundle';
+
+
 .page-container {
   display: grid;
   min-height: 100vh;

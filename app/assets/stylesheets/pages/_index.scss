@@ -4,15 +4,17 @@
 @import "dashboard";
 
 .card-top {
-  background-color: rgb(255, 255, 255);
-  border-radius: 9px;
-  padding: 18px;
+  padding: 16px 0px;
   margin-top: 16px;
   margin-bottom: 16px;
 }
 
 .card-top h4 {
   font-size: 32px;
+}
+
+.card-top h5 {
+  color: grey;
 }
 
 .card-dog {
@@ -45,7 +47,7 @@
 
 .card-dog-header {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .card-dog-img-top {
@@ -58,17 +60,13 @@
 
 .card-dog-title {
   font-weight: bolder;
-  margin-right: 12px;
+  margin-right: 16px;
   a {
     color: rgb(106, 111, 182);
     &:hover {
       color: rgb(64, 67, 116)
     }
   }
-}
-
-h6 {
-  color: grey;
 }
 
 h4 {
@@ -80,4 +78,15 @@ h4 {
     position: sticky;
     top: 60px;
     height: 100vh;
+}
+
+.form-control {
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid rgb(221, 221, 221);
+  margin-right: 6px;
+}
+
+.form-inline {
+  margin-bottom: 12px;
 }

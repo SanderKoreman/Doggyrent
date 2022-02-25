@@ -11,16 +11,52 @@
   }
 }
 
-.btn-blue {
-  background-color: rgb(106, 111, 182);
-  color: rgb(238, 242, 253);
+.btn-green {
+  background-color: #41dab4;
+  color: #ffffff;
   padding: 10px 20px;
   border-radius: 6px;
-  box-shadow: 0 4px rgb(66, 69, 114);
+  box-shadow: 0 3px #299278;
   font-weight: 700;
   text-decoration: none;
   width: fit-content;
   margin-top: -4px;
+  &:hover {
+  //   box-shadow: 0 4px rgb(66, 69, 114);
+  //   padding: 8px 20px 8px 20px;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.btn-blue {
+  background-color: rgb(106, 111, 182);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px rgb(68, 71, 122);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  width: fit-content;
+  margin-top: -4px;
+  &:hover {
+  //   box-shadow: 0 4px rgb(66, 69, 114);
+  //   padding: 8px 20px 8px 20px;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.btn-blue-small {
+  background-color: rgb(106, 111, 182);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px rgb(68, 71, 122);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  width: fit-content;
+  margin-bottom: -2px;
   &:hover {
   //   box-shadow: 0 4px rgb(66, 69, 114);
   //   padding: 8px 20px 8px 20px;
