@@ -3,7 +3,10 @@
 
 <%= simple_form_for [@dog, @booking] do |f|  %>
 <%= f.input :message  %>
-<%= f.input :date, as: :string, placeholder: "Pick a date", input_html: {data: {controller: "flatpickr", flatpickr_enable_time: true}} %>
+<%#= f.input :date, as: :string, placeholder: "Pick a date", input_html: {data: {controller: "flatpickr", flatpickr_enable_time: true}} %>
+<%= f.input :date %>
+
+
 <%= f.submit "Make a booking"  %>
 <% end %>
 </div>
