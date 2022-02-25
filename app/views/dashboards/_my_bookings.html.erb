@@ -13,7 +13,8 @@
             <h6><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h6>
             <span class = "fw-normal badge ms-2"><%= booking.status.capitalize %></span>
           </div>
-          <p>For: <strong> <%= booking.date.strftime('%a %d %b %Y') %></strong></p>
+
+          <p>For: <strong> <%= booking.date.strftime('%a %d %b %Y %H:%M') %></strong></p>
           <div class="booking-tooltip">
             <p>See message from <%= booking.user.first_name %></p>
             <span class="tooltiptext"><%= booking.message %></span>
