@@ -1,7 +1,6 @@
 <div class="container">
   <div class="flex-container">
-    <h1>Hi! My name is <%= @dog.name %></h1>
-    <h2 class="breed-title">(and I'm a <%= @dog.breed.downcase %>)</h2>
+    <h1>Woof! My name is <%= @dog.name %></h1>
   </div>
   <div class="dog-show-grid">
     <% @dog.photos.each_with_index do |photo, index| %>
@@ -15,32 +14,35 @@
     <% end %>
   </div>
 
-    <div class="row">
-      <div class="col-6">
-          <div class="description-card">
-            <h2 class="description-title">Description</h2>
-            <p class="description-text"><%= @dog.description %></p>
-            <p class="description-info"><em><%= @dog.name %> is a <%= @dog.breed %>. Learn more about his/her character <a href="https://dogtime.com/dog-breeds/<%=@dog.breed%>">here</a>.</em></p>
-          </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="description-card">
+        <h2 class="description-title">Description</h2>
+        <p class="description-text"><%= @dog.description %></p>
+        <p class="description-info"><em><%= @dog.name %> is a <%= @dog.breed %>. Learn more about his/her character <a href="https://dogtime.com/dog-breeds/<%=@dog.breed%>" target="_blank">here</a>.</em></p>
       </div>
-      <div class="col-6">
-        <div class="calendar-card">
-          <h2 class="calendar-title">Availability</h2>
+    </div>
+    <div class="col-6">
+      <div class="calendar-card">
+        <h2 class="calendar-title">Availability</h2>
+        <% if user_signed_in? %>
           <%= simple_form_for [@dog, @booking] do |f|  %>
             <%= f.input :message  %>
             <%= f.input :date  %>
             <%= f.submit "BOOK ME!", class: "btn btn-green"%>
           <% end %>
-        </div>
+        <% else %>
+          <p class="calendar-message"><%= link_to "Login", new_user_session_path %> or <%= link_to "register", new_user_registration_path %> to book this cutie!</p>
+        <% end %>
       </div>
     </div>
-<!--------------MAP------------------------->
+  </div>
   <div class="map-container">
     <h2 class="Location-title">Where am I?</h2>
-      <div style="width: 100%; height: 600px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json%>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY']%>">
-      </div>
+    <div style="width: 100%; height: 600px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json%>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY']%>">
+    </div>
   </div>
 </div>

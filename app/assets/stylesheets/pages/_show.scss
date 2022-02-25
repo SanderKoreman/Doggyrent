@@ -28,6 +28,7 @@ h1 {
   background-color: white;
   border-radius: 9px;
   padding: 12px;
+  min-height: 296px;
 }
 
 .calendar-card {
@@ -37,7 +38,6 @@ h1 {
   background-color: white;
   border-radius: 9px;
   padding: 12px;
-  height: 300px;
 }
 
 .dog-show-grid {
@@ -92,4 +92,34 @@ h1 {
 .description-info {
   color: grey;
   font-size: 14px;
+}
+
+.description-info a {
+    color: rgb(106, 111, 182);
+    text-decoration: none;
+    &:hover {
+      color: rgb(68, 71, 122)
+    }
+}
+
+.container-form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.form-inline {
+  flex-grow: 1;
+}
+
+.calendar-message {
+  color: grey;
+}
+
+.calendar-message a {
+  color: rgb(106, 111, 182);
+  text-decoration: none;
+    &:hover {
+      color: rgb(68, 71, 122)
+    }
 }
