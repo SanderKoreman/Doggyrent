@@ -23,11 +23,12 @@
               </div>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/my-dashboard">Dashboard</a>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item"  %>
               </div>
             <% else %>
               <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg" />
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/dogs/new">Add listing</a>
+                <a class="dropdown-item" href="/dogs/new">Log in / Register</a>
             </div>
             <% end %>
           </li>
