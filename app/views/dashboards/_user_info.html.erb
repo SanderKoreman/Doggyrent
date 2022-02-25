@@ -7,8 +7,8 @@
       <img src="https://www.sibberhuuske.nl/wp-content/uploads/2016/10/default-avatar.png" alt="avatar" class="avatar-box" >
     <% end %>
     <div class="dg-margin-bottom mt-3 text-center">
-      <span class="fs-7 text-gray-400 text-hover-primary fw-medium"><%= current_user.first_name %> <%= current_user.last_name %></span>
-      <a href="users/<%= @user.id %>/edit">Edit profile</a>
+      <h5 class="fs-7 text-gray-400 text-hover-primary fw-medium"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+      <a href="users/<%= @user.id %>/edit" class="btn-blue-mini">EDIT PROFILE</a>
     </div>
     <!---------------------My dogs------------------------------->
     <div class="dashboard-dogs-card">
@@ -16,7 +16,7 @@
           <h5 class="fw-bold">My dogs </h5>
         <% @my_dogs.each do |dog| %>
               <div class= " mt-3 mt-4 d-flex justify-content-between">
-                <h2 class = "link-dog-show"><%= link_to dog.name, dog_path(dog) %></h2>
+                <h2 class ="link-dog-show"><%= link_to dog.name, dog_path(dog) %></h2>
                 <div class="icons-dashboard">
                   <a href="dogs/<%= dog.id %>/edit" class = "me-2"><i class="fas fa-edit"></i></a>
                   <a data-confirm="Are you sure?" data-method="delete" href="dogs/<%= dog.id %>"><i class="fas fa-trash"></i></a>

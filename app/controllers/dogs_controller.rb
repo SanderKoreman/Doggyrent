@@ -7,7 +7,6 @@ class DogsController < ApplicationController
     else
       @dogs = Dog.all
     end
-
     @markers = @dogs.geocoded.map do |dog|
       {
         lat: dog.latitude,
@@ -21,6 +20,13 @@ class DogsController < ApplicationController
   def show
     @dog = Dog.find(params[:id])
     @booking = Booking.new
+
+    @markers = [{
+      lat: @dog.latitude,
+      lng: @dog.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { dog: @dog }),
+      image_url: helpers.asset_url("dogface5.svg")
+      }]
   end
 
   def new
