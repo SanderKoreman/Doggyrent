@@ -28,7 +28,7 @@
         <% if user_signed_in? %>
           <%= simple_form_for [@dog, @booking] do |f|  %>
             <%= f.input :message  %>
-            <%= f.input :date  %>
+            <%= f.input :date, as: :string, placeholder: "Pick a date", input_html: {data: {controller: "flatpickr", flatpickr_enable_time: true}} %>
             <%= f.submit "BOOK ME!", class: "btn btn-green btn-fix-margin"%>
           <% end %>
         <% else %>
