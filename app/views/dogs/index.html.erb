@@ -8,7 +8,7 @@
           <h4>Hi you!</h4>
         <% end %>
         <h5>At this very moment, <%= pluralize @dogs.size, "dog" %> want<%= "s" if @dogs.size < 2 %> to go for a walk in the park. <strong>Let's go!</strong></h5>
-            <%= form_tag(dogs_path, method: :get, remote: true) do %>
+            <%= form_tag(dogs_path, method: :get) do %>
               <div class="container-form">
               <%= text_field_tag :query,
                 params[:query],
@@ -20,8 +20,8 @@
             <% end %>
       </div>
       <% @dogs.each do |dog| %>
-        <div class="card-dog" style="width: 100%;">
-          <% if dog.user != current_user %>
+        <% if dog.user != current_user %>
+          <div class="card-dog" style="width: 100%;">
               <% if dog.photos.attached? %>
                 <%= cl_image_tag dog.photos.first.key, height: 300, width: 400, crop: :fill, class: 'card-dog-img-top'%>
               <% else %>
@@ -34,12 +34,12 @@
                 </div>
                 <p class="owner-name"><em><%= dog.user.first_name %>'s dog</em></p>
                 <p class="card-dog-text">
-                <%= dog.description[0..225] %> <%= "..." if dog.description.size >= 225 %>
+                <%= dog.description[0..200] %> <%= "..." if dog.description.size >= 200 %>
                 </p>
                 <%= link_to "MEET ME!", dog_path(dog), class: "btn-green"%>
               </div>
+            </div>
           <%end %>
-      </div>
     <% end %>
   </div>
     <div class="col-5">
