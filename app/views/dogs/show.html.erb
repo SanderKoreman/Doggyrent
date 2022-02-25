@@ -20,6 +20,7 @@
           <div class="description-card">
             <h2 class="description-title">Description</h2>
             <p class="description-text"><%= @dog.description %></p>
+            <p class="description-info"><em><%= @dog.name %> is a <%= @dog.breed %>. Learn more about his/her character <a href="https://dogtime.com/dog-breeds/<%=@dog.breed%>">here</a>.</em></p>
           </div>
       </div>
       <div class="col-6">
@@ -28,7 +29,7 @@
           <%= simple_form_for [@dog, @booking] do |f|  %>
             <%= f.input :message  %>
             <%= f.input :date  %>
-            <%= f.submit "BOOK ME!", class: "btn-blue"%>
+            <%= f.submit "BOOK ME!", class: "btn btn-green"%>
           <% end %>
         </div>
       </div>
