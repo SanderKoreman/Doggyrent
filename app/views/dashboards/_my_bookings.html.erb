@@ -3,15 +3,16 @@
   <% @my_bookings.each do |booking| %>
     <div class="card-product mb-4">
       <% if booking.dog.photos.attached?  %>
-        <%= cl_image_tag(booking.dog.photos.first.key) %>
+        <%= cl_image_tag(booking.dog.photos.first.key)%>
       <% else %>
         <img src="https://dogfuriendly.com/wp-content/uploads/2019/02/Default-Avatar.jpg" alt="dog photo">
       <% end %>
-      <div class= "d-flex justify-content-between align-items-center">
+      <div class= "d-flex justify-content-between align-items-center" style="width: 100%" >
         <div>
           <h6><%= link_to booking.dog.name, dog_path(booking.dog.id) %> booked!</h6>
           <p>For: <strong> <%= booking.date %></strong></p>
           <span class = "fw-normal badge"><%= booking.status.capitalize %></span>
+
           <p><strong><%= booking.user.first_name %></strong> noted: <em>"<%= booking.message %>"</em></p>
         </div>
         <div>
@@ -25,3 +26,7 @@
     No history of bookings. <%= link_to "Rent a dog now", dogs_path, class: "alert-link" %>
   </div>
 <% end %>
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on bottom
+</button>

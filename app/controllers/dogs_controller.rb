@@ -3,11 +3,11 @@ class DogsController < ApplicationController
   def index
     @dogs = Dog.all
 
-    @markers = @dogs.geocoded.map do |flat|
+    @markers = @dogs.geocoded.map do |dog|
       {
-        lat: flat.latitude,
-        lng: flat.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { flat: flat }),
+        lat: dog.latitude,
+        lng: dog.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { dog: dog }),
         image_url: helpers.asset_url("dogface5")
       }
     end
