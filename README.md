@@ -40,8 +40,10 @@
 <h2>Showcase</h2>
 
 
-![This is an image](https://i.ibb.co/qpcw6W0/doggyrentalonlaptop.png)
+![This is an image](https://i.ibb.co/Bf2wms1/Doggy-Rent01.jpg)
 
-![This is an image](https://i.ibb.co/qxSCQPZ/doggyrentalonlaptop2.png)
+![This is an image](https://i.ibb.co/v46mFdp/Doggy-Rent02.jpg)
 
-![This is an image](https://i.ibb.co/X4kp8RW/dashboarddoggyonscreen.png)
+![This is an image](https://i.ibb.co/f80nkTZ/Doggy-Rent03.jpg)
+
+![This is an image](https://i.ibb.co/2KyQsvq/Doggy-Rent04.jpg)
