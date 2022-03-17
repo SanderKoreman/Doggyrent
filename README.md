@@ -35,7 +35,7 @@
   
 <h2>Creators</h2>
 
-<p>Created by <a href="https://github.com/SanderKoreman">Sander Koreman</a>Sander Koreman and <a href="https://github.com/EugyPastore">Eugenia Pastore</a> during the Le Wagon Web Development Bootcamp in Amsterdam.</p>
+<p>Created by <a href="https://github.com/SanderKoreman">Sander Koreman</a> and <a href="https://github.com/EugyPastore">Eugenia Pastore</a> during the Le Wagon Web Development Bootcamp in Amsterdam.</p>
 
 <h2>Showcase</h2>
 
