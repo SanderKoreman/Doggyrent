@@ -1,7 +1,8 @@
 <h1>DoggyRent</h1>
-<h3>Want to take a dog for a walk? Your new fluffy friend is just a few clicks away!</h3>
 
 <h2>Description</h2>
+
+<h3>Want to take a dog for a walk? Your new fluffy friend is just a few clicks away!</h3>
 
 <p>We've all been there. It's a sunny day, peak spring, which screams for a nice stroll through the park. But your partner has been annoying you all morning. You definitely don't want to ask him or her to join you. How we wish there was someone who's always friendly to us, right? But wait, there is someone! Every dog in the world! (Ok, almost every dog...)<p>
   
@@ -17,29 +18,29 @@
 
 <p>After a reservation is made, the owner of a dog receives a booking request which could be either approved or declined. The status of a booking is updated automatically.</p>
 
- <p> DoggyRent in short: </p>
-  <ul>
+<p> <b>DoggyRent in short:</b> </p>
+<ul>
   <li>Built on Ruby on Rails</li>
-    <li>4 pages: Landing page, Index, Show, Dashboard, Contact</li>
-    <li>Forms: login, sign up, change info</li>
-    <li>MVC Architecture</li>
-    <li>AJAX</li>
-    <li>Search Bar</li>
-    <li>UX/UI design</li>
-    <li>Uniform colors and fonts</li>
-    <li>Gems: Geocoder, Claudinary, Devise, Simple form</li>
-    <li>Simple Navigation</li>
-    <li>Call-to-action Buttons</li>
-  </ul>
+  <li>4 pages: Landing page, Index, Show, Dashboard, Contact</li>
+  <li>Forms: login, sign up, change info</li>
+  <li>MVC Architecture</li>
+  <li>AJAX</li>
+  <li>Search Bar</li>
+  <li>UX/UI design</li>
+  <li>Uniform colors and fonts</li>
+  <li>Gems: Geocoder, Claudinary, Devise, Simple form</li>
+  <li>Simple Navigation</li>
+  <li>Call-to-action Buttons</li>
+</ul>
   
-  <h2>Creators</h2>
-Created by Sander Koreman and Eugenia Pastore while undertaking Le Wagon Bootcamp.
+<h2>Creators</h2>
+
+<p>Created by Sander Koreman and Eugenia Pastore during the Le Wagon Web Development Bootcamp in Amsterdam.</p>
 
 <h2>Showcase</h2>
 
 
-  ![This is an image](https://i.ibb.co/qpcw6W0/doggyrentalonlaptop.png)
-
+![This is an image](https://i.ibb.co/qpcw6W0/doggyrentalonlaptop.png)
 
 ![This is an image](https://i.ibb.co/qxSCQPZ/doggyrentalonlaptop2.png)
 
