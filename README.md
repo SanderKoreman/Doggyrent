@@ -28,7 +28,7 @@
   <li>Search Bar</li>
   <li>UX/UI design</li>
   <li>Uniform colors and fonts</li>
-  <li>Gems: Geocoder, Claudinary, Devise, Simple form</li>
+  <li>Gems: Geocoder, Cloudinary, Devise, Simple Form</li>
   <li>Simple Navigation</li>
   <li>Call-to-action Buttons</li>
 </ul>
