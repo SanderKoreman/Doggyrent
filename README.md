@@ -8,9 +8,9 @@
   
 <p>But then there's the next problem. Because what if you don't have a fluffy friend sitting at home, waiting for you to take him or her outside? Well, that's where we come in. DoggyRent is your way to go.<p>
   
-<p>DoggyRent is a marketplace for dogs. Yes, we know it's not the most ethical thing in the world. But the pictures are cute as crazy, right? Anyway. Owners can list their dogs by providing photos, description, breed and address. And interested users can rent them to take them for a walk.<p>
+<p>DoggyRent is a <br>marketplace for dogs</b>. Yes, we know it's not the most ethical thing in the world. But the pictures are cute as crazy, right? Anyway. Owners can list their dogs by providing photos, description, breed and address. And interested users can rent them to take them for a walk.<p>
  
-<p>The marketplace is built on Ruby on Rails and includes features as a mapbox, a form for reservations and a fully functioning dashboard where users can keep track of their reservations.<p>
+<p>The marketplace is built on <b>Ruby on Rails</b> and includes features as a mapbox, a form for reservations and a fully functioning dashboard where users can keep track of their reservations.<p>
 
 <p> The index page has a search tool (with filters by breed) that utilizes AJAX, which makes it easy for walkers to choose the right dog. The Geocoder gem takes care of showing the precise location of a dog on a map, as well as cute doggy marker on a Mapbox map in JavaScript was added to make user journey more fun.</p>
 
