@@ -21,7 +21,7 @@
 <p> <b>DoggyRent in short:</b> </p>
 <ul>
   <li>Built on Ruby on Rails</li>
-  <li>4 pages: Landing page, Index, Show, Dashboard, Contact</li>
+  <li>5 pages: Landing page, Index, Show, Dashboard, Contact</li>
   <li>Forms: login, sign up, change info</li>
   <li>MVC Architecture</li>
   <li>AJAX</li>
